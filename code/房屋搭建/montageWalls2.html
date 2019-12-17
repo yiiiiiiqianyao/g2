@@ -181,6 +181,74 @@
         meshrf.rotation.x = Math.PI/2
         scene.add( meshrf )
 
+        // ---- add inside wall
+
+        var iwall1 = new THREE.Shape()
+        iwall1.moveTo(0, 0)
+        iwall1.lineTo(0, 30)
+        iwall1.lineTo(20, 30)
+        iwall1.lineTo(20, 0)
+        iwall1.lineTo(0, 0)
+
+        var ihole1 = new THREE.Path()
+        ihole1.moveTo(5, 0)
+        ihole1.lineTo(5, 20)
+        ihole1.lineTo(15, 20)
+        ihole1.lineTo(15, 0)
+        ihole1.lineTo(5, 0)
+        iwall1.holes.push(ihole1)
+
+        var geometryi1 = new THREE.ShapeGeometry( iwall1 )
+        var meshri1 = new THREE.Mesh( geometryi1, new THREE.MeshBasicMaterial({color: 0x00ff00}) )
+        meshri1.position.copy(new THREE.Vector3(0, 0, 20))
+        scene.add( meshri1 )
+
+        var idoor1 = new THREE.Shape() 
+        idoor1.moveTo(5, 0)
+        idoor1.lineTo(5, 20)
+        idoor1.lineTo(15, 20)
+        idoor1.lineTo(15, 0)
+        idoor1.lineTo(5, 0)
+        var geometryid1 = new THREE.ShapeGeometry( idoor1 )
+        var meshrid1 = new THREE.Mesh( geometryid1, new THREE.MeshBasicMaterial({color: 0x0000ff}) )
+        meshrid1.position.copy(new THREE.Vector3(0, 0, 20))
+        scene.add( meshrid1 )
+
+        var iwall2 = new THREE.Shape()
+        iwall2.moveTo(0, 0)
+        iwall2.lineTo(0, 30)
+        iwall2.lineTo(20, 30)
+        iwall2.lineTo(20, 0)
+        iwall2.lineTo(0, 0)
+
+        var ihole2 = new THREE.Path()
+        ihole2.moveTo(5, 0)
+        ihole2.lineTo(5, 20)
+        ihole2.lineTo(15, 20)
+        ihole2.lineTo(15, 0)
+        ihole2.lineTo(5, 0)
+        iwall2.holes.push(ihole2)
+
+        var geometryi2 = new THREE.ShapeGeometry( iwall2 )
+        var meshri2 = new THREE.Mesh( geometryi2, new THREE.MeshBasicMaterial({color: 0x00ff00}) )
+        meshri2.rotation.y = -Math.PI
+        meshri2.position.copy(new THREE.Vector3(20, 0, 20))
+        scene.add( meshri2 )
+
+        var idoor2 = new THREE.Shape() 
+        idoor2.moveTo(5, 0)
+        idoor2.lineTo(5, 20)
+        idoor2.lineTo(15, 20)
+        idoor2.lineTo(15, 0)
+        idoor2.lineTo(5, 0)
+        var geometryid2 = new THREE.ShapeGeometry( idoor2 )
+        var meshrid2 = new THREE.Mesh( geometryid2, new THREE.MeshBasicMaterial({color: 0x0000ff}) )
+        meshrid2.rotation.y = -Math.PI
+        meshrid2.position.copy(new THREE.Vector3(20, 0, 20))
+        scene.add( meshrid2 )
+
+        //---- 
+
         var grid = new THREE.GridHelper( 100, 50, 0x444444, 0x888888 );
         scene.add( grid );
         var axesHelper = new THREE.AxesHelper( 5 );
